@@ -1,0 +1,2 @@
+bash ./exps/codealpaca20k/finetune_qwen_mocorelora_corerouter_exp4_rank128_1epoch.sh
+bash ./exps/codealpaca20k/finetune_qwen_mocorelora_exp4_rank8_1epoch.sh

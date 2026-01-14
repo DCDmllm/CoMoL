@@ -1,0 +1,16 @@
+export CUDA_VISIBLE_DEVICES="4"
+
+# Count the number of devices
+num_devices=$(echo $CUDA_VISIBLE_DEVICES | awk -F',' '{print NF}')
+
+echo "Number of devices: $num_devices"
+
+base_model=llama-3-1-8b-instruct
+model=mocorelora
+experts=8
+
+python train.py @configs/${base_model}_${model}_commonsense15k_train_exp${experts}_corerouter.config
+
+python test_math.py @configs/${base_model}_${model}_commonsense15k_test_exp${experts}_corerouter.config
+
+python evaluate_commonsense.py --predict_file /data/workspace/projects/moe/AdaMoLE/outputs/${base_model}-${model}-exp${experts}-corerouter-commonsense-15k/predictions/boolq_responses.jsonl

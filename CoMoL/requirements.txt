@@ -1,0 +1,8 @@
+datasets
+huggingface_hub
+numpy
+pandas
+peft==0.9.0
+torch
+tqdm
+tensorboardX
