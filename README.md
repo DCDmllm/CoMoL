@@ -38,8 +38,6 @@ CoMoL/
 └── requirements.txt             # Python dependencies
 ```
 
-Internal experiment/configuration folders such as `configs_` and `exps_` are not required for the public workflow and are intentionally excluded from the instructions below.
-
 ## Installation
 
 ```bash
